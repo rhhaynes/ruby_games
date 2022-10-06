@@ -3,24 +3,24 @@ require "ruby_games/cli"
 require "ruby_games/version"
 
 module RubyGames
-    module RubyBrickBreaker
-        require "ruby_games/ruby_brick_breaker/ball"
-        require "ruby_games/ruby_brick_breaker/brick"
-        require "ruby_games/ruby_brick_breaker/game"
-        require "ruby_games/ruby_brick_breaker/paddle"
+    module BrickBreaker
+        require "ruby_games/brick_breaker/ball"
+        require "ruby_games/brick_breaker/brick"
+        require "ruby_games/brick_breaker/game"
+        require "ruby_games/brick_breaker/paddle"
     end
-    module RubySnake
-        require "ruby_games/ruby_snake/food"
-        require "ruby_games/ruby_snake/game"
-        require "ruby_games/ruby_snake/obstacle"
-        require "ruby_games/ruby_snake/snake"
+    module Snake
+        require "ruby_games/snake/food"
+        require "ruby_games/snake/game"
+        require "ruby_games/snake/obstacle"
+        require "ruby_games/snake/snake"
     end
-    module RubySpaceship
-        require "ruby_games/ruby_spaceship/alien"
-        require "ruby_games/ruby_spaceship/game"
-        require "ruby_games/ruby_spaceship/laser"
-        require "ruby_games/ruby_spaceship/obstacle"
-        require "ruby_games/ruby_spaceship/spaceship"
+    module SpaceBlaster
+        require "ruby_games/space_blaster/alien"
+        require "ruby_games/space_blaster/game"
+        require "ruby_games/space_blaster/laser"
+        require "ruby_games/space_blaster/obstacle"
+        require "ruby_games/space_blaster/spaceship"
     end
 end
 RubyGames::WINDOW = get :window

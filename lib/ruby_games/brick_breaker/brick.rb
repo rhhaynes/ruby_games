@@ -1,4 +1,4 @@
-class RubyGames::RubyBrickBreaker::Brick
+class RubyGames::BrickBreaker::Brick
     def initialize(x, y, color = 'red')
         @rectangle = Rectangle.new(x: x, y: y, width: 50, height: 10, color: color)
     end

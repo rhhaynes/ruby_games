@@ -1,4 +1,4 @@
-class RubyGames::RubySnake::Food
+class RubyGames::Snake::Food
     def initialize(x, y, color = 'red')
         @circle = Circle.new(x: x, y: y, radius: 5, color: color)
     end

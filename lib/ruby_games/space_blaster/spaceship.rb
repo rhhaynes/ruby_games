@@ -1,4 +1,4 @@
-class RubyGames::RubySpaceship::Spaceship
+class RubyGames::SpaceBlaster::Spaceship
     def initialize(y, speed, color = 'lime')
         @speed = speed
         @body = Triangle.new(
@@ -20,7 +20,7 @@ class RubyGames::RubySpaceship::Spaceship
     end
 
     def fire_laser
-        RubyGames::RubySpaceship::Laser.new(@body.x3, @body.y3, 2*@speed)
+        RubyGames::SpaceBlaster::Laser.new(@body.x3, @body.y3, 2*@speed)
     end
 
     def move(key)

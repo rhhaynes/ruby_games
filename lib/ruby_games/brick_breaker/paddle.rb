@@ -1,4 +1,4 @@
-class RubyGames::RubyBrickBreaker::Paddle
+class RubyGames::BrickBreaker::Paddle
     attr_reader :segments
 
     def initialize(max_x, max_y, speed, color = 'lime')

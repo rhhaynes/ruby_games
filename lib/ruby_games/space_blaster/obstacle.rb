@@ -1,4 +1,4 @@
-class RubyGames::RubySpaceship::Obstacle
+class RubyGames::SpaceBlaster::Obstacle
     def initialize(x, y, size, speed, color = 'blue')
         @vx = -speed
         @square = Square.new(x: x, y: y, size: size, color: color)

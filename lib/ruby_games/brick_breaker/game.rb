@@ -1,4 +1,4 @@
-class RubyGames::RubyBrickBreaker::Game
+class RubyGames::BrickBreaker::Game
     def initialize(cli)
         @cli = cli
         @cli.handle_key_down = -> (key) { handle_key_down(key) }
@@ -43,7 +43,7 @@ class RubyGames::RubyBrickBreaker::Game
 
     def create_bricks
         props = { x_min: 5, x_max: @max_x-30, y_min: 5, y_max: 105 }
-        @bricks = RubyGames::RubyBrickBreaker::Brick.create(props)
+        @bricks = RubyGames::BrickBreaker::Brick.create(props)
     end
 
     def handle_key_down(key)
@@ -63,16 +63,14 @@ class RubyGames::RubyBrickBreaker::Game
     def move_ball
         if collision_paddle?
             @vy *= -1
-            case @paddle.segments.index { |rect| rect.contains? @ball.x, @ball.y }
-            when 0 then x_term = -4
-            when 1 then x_term = -2
-            when 2 then x_term = -1
-            when 3 then x_term =  0
-            when 4 then x_term =  0
-            when 5 then x_term =  1
-            when 6 then x_term =  2
-            when 7 then x_term =  4
+            index = @paddle.segments.index { |rect| rect.contains? @ball.x, @ball.y }
+            case index
+            when 0,7 then x_term = 4
+            when 1,6 then x_term = 2
+            when 2,5 then x_term = 1
+            when 3,4 then x_term = 0
             end
+            x_term *= -1 if [0,1,2].include? index
             @vx += x_term
             if @vx == 0
                 @vx =  1 if @ball.x <= 0
@@ -95,8 +93,8 @@ class RubyGames::RubyBrickBreaker::Game
         @speed = 8
         @vx =  @speed/4
         @vy = -@speed
-        @ball = RubyGames::RubyBrickBreaker::Ball.new(@max_x/2, @max_y-25)
-        @paddle = RubyGames::RubyBrickBreaker::Paddle.new(@max_x, @max_y, 12)
+        @ball = RubyGames::BrickBreaker::Ball.new(@max_x/2, @max_y-25)
+        @paddle = RubyGames::BrickBreaker::Paddle.new(@max_x, @max_y, 12)
         create_bricks
     end
 end

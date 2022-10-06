@@ -1,4 +1,4 @@
-class RubyGames::RubySpaceship::Game
+class RubyGames::SpaceBlaster::Game
     def initialize(cli)
         @cli = cli
         @cli.handle_key_down = -> (key) { handle_key_down(key) }
@@ -25,13 +25,13 @@ class RubyGames::RubySpaceship::Game
     private
 
     def add_alien
-        @aliens << RubyGames::RubySpaceship::Alien.new(@max_x, @spaceship.nose[:y], @speed)
+        @aliens << RubyGames::SpaceBlaster::Alien.new(@max_x, @spaceship.nose[:y], @speed)
     end
 
     def add_obstacles(n = [1,2,3].sample)
         props = { x_min: @max_x, x_max: @max_x+150, y_min: 0, y_max: @max_y-150 }
         invalid = -> (obstacle) { false }
-        @obstacles.concat(RubyGames::RubySpaceship::Obstacle.create(n, @speed, props, invalid))
+        @obstacles.concat(RubyGames::SpaceBlaster::Obstacle.create(n, @speed, props, invalid))
     end
 
     def collision?
@@ -44,7 +44,7 @@ class RubyGames::RubySpaceship::Game
     def create_obstacles(n = 5)
         props = { x_min: 150, x_max: @max_x-150, y_min: 0, y_max: @max_y-150 }
         invalid = -> (obstacle) { @spaceship.contained_by? obstacle }
-        @obstacles = RubyGames::RubySpaceship::Obstacle.create(n, @speed, props, invalid)
+        @obstacles = RubyGames::SpaceBlaster::Obstacle.create(n, @speed, props, invalid)
     end
 
     def handle_key_down(key)
@@ -97,7 +97,7 @@ class RubyGames::RubySpaceship::Game
         @tick = 0
         @paused = true
         @speed = 5
-        @spaceship = RubyGames::RubySpaceship::Spaceship.new(@max_y/2, @speed)
+        @spaceship = RubyGames::SpaceBlaster::Spaceship.new(@max_y/2, @speed)
         @aliens = []
         @lasers = []
         create_obstacles

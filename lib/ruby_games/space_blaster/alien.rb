@@ -1,4 +1,4 @@
-class RubyGames::RubySpaceship::Alien
+class RubyGames::SpaceBlaster::Alien
     def initialize(x, y, speed)
         @vx = -1.6*speed
         @vy =  0.5*speed

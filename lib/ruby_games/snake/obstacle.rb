@@ -1,4 +1,4 @@
-class RubyGames::RubySnake::Obstacle
+class RubyGames::Snake::Obstacle
     def initialize(x, y, size, color = 'blue')
         @square = Square.new(x: x, y: y, size: size, color: color)
     end

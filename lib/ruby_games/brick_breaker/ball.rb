@@ -1,4 +1,4 @@
-class RubyGames::RubyBrickBreaker::Ball
+class RubyGames::BrickBreaker::Ball
     def initialize(x, y, color = 'white')
         @circle = Circle.new(x: x, y: y, radius: 5, color: color)
     end

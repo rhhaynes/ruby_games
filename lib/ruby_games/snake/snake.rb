@@ -1,4 +1,4 @@
-class RubyGames::RubySnake::Snake
+class RubyGames::Snake::Snake
     def initialize(y, length)
         @color = 'lime'
         @direction = 'RT'

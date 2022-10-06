@@ -1,4 +1,4 @@
-class RubyGames::RubySpaceship::Laser
+class RubyGames::SpaceBlaster::Laser
     attr_reader :beam
 
     def initialize(x, y, speed, color = 'red')
