@@ -6,7 +6,6 @@ class RubyGames::RubySpaceship::Game
         @window = @cli.window
         @max_x = @window.get :width
         @max_y = @window.get :height
-        @speed = 5
     end
 
     def start
@@ -97,6 +96,7 @@ class RubyGames::RubySpaceship::Game
         @window.clear
         @tick = 0
         @paused = true
+        @speed = 5
         @spaceship = RubyGames::RubySpaceship::Spaceship.new(@max_y/2, @speed)
         @aliens = []
         @lasers = []

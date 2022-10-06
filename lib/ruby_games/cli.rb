@@ -6,10 +6,13 @@ class RubyGames::CLI
         @menu = {
             title: Text.new("Ruby Games", x: @max_x/3, y: 50, size: 64, color: "lime"),
             options: [{
-                label: Text.new("Snake", x: @max_x/6+50, y: 175, size: 42, color: "blue"),
+                label: Text.new("Brick Breaker", x: @max_x/6+50, y: 175, size: 42, color: "blue"),
+                on_select: -> () { RubyGames::RubyBrickBreaker::Game.new(self).start }
+            }, {
+                label: Text.new("Snake", x: @max_x/6+50, y: 250, size: 42, color: "blue"),
                 on_select: -> () { RubyGames::RubySnake::Game.new(self).start }
             }, {
-                label: Text.new("Spaceship", x: @max_x/6+50, y: 250, size: 42, color: "blue"),
+                label: Text.new("Spaceship", x: @max_x/6+50, y: 325, size: 42, color: "blue"),
                 on_select: -> () { RubyGames::RubySpaceship::Game.new(self).start }
             }],
             active: {

@@ -6,7 +6,7 @@ class RubyGames::RubySpaceship::Alien
     end
 
     def contains?(x, y)
-        @circle.contains?(x, y)
+        @circle.contains? x, y
     end
 
     def move(y_sign)
