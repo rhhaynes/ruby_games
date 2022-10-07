@@ -7,16 +7,16 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    rake (10.5.0)
+    rake (13.0.6)
     ruby2d (0.11.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.16)
-  rake (~> 10.0)
+  bundler
+  rake
   ruby_games!
 
 BUNDLED WITH
-   1.16.1
+   2.3.22

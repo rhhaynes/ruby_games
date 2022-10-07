@@ -17,7 +17,7 @@ class RubyGames::CLI
             }],
             active: {
                 index: 0,
-                symbol: Text.new("▶", x: @max_x/6, y: 175, size: 42, color: "blue")
+                symbol: Text.new(">", x: @max_x/6, y: 175, size: 42, color: "blue")
             }
         }
         @window = RubyGames::WINDOW
