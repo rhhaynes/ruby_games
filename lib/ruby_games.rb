@@ -9,6 +9,11 @@ module RubyGames
         require "ruby_games/brick_breaker/game"
         require "ruby_games/brick_breaker/paddle"
     end
+    module MoonBuggy
+        require "ruby_games/moon_buggy/buggy"
+        require "ruby_games/moon_buggy/game"
+        require "ruby_games/moon_buggy/obstacle"
+    end
     module Snake
         require "ruby_games/snake/food"
         require "ruby_games/snake/game"
